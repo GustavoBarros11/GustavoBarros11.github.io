@@ -112,7 +112,7 @@ input, select, textarea {
 /* Type */
 
 	html {
-		font-size: 16pt;
+		font-size: 13pt;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -144,7 +144,6 @@ input, select, textarea {
 		/* font-family: "Source Sans Pro", sans-serif; */
 		font-family: "Open Sans", sans-serif;
 		font-weight: 300;
-		font-size: 1rem;
 		line-height: 1.65;
 	}
 
@@ -173,6 +172,7 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2rem 0;
+		color: #838383;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -740,7 +740,7 @@ input, select, textarea {
 	}
 
 		ul li {
-			padding-left: 0.5em;
+			padding: 0 0.25em;
 		}
 
 		ul.alt {
@@ -1207,6 +1207,12 @@ input, select, textarea {
 		padding: 4rem 2rem;
 		z-index: 3;
 		overflow: hidden;
+		background-image: url(../../images/bg3.jpg);
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: #1a1a23;
 	}
 
 		#wrapper:before {
@@ -1643,48 +1649,64 @@ input, select, textarea {
 
 
 /* Intro Section */
-#intro-section, #about-section {
+#intro-section {
 	width: 100%;
 	background-color: #fff;
 	color: #3d4449;
-	padding: 50px 5em;
+	padding: 50px 5em 50px 5em;
+	border-bottom: solid 5px rgba(5, 106, 146, 0.75);
 }
 
 #intro-section h1 {
-	color: #000;
+	color: #3d4449;
 	padding-left: 15px;
 	padding-bottom: 0px;
 	border-left: 5px solid #57bcc5;
 }
 
 
-#intro-section .intro-body p {
-	text-align: justify;
-}
-
-#intro-section hr {
-	border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+#intro-section header p {
+	color: #3d4449;
 }
 
 /* About Section */
 #about-section {
 	width: 100%;
-	min-height: 700px;
-	background-color: #fff;
+	background-color: #262334;
 	color: #3d4449;
-	padding: 50px 5em;
+	padding: 50px 5em 50px 5em;
 }
 
 #about-section h1 {
-	color: #000;
 	padding-left: 15px;
 	padding-bottom: 0px;
 	border-left: 5px solid #57bcc5;
+	border-bottom: 0px;
 }
 
-#about-section header p {
-	color: #000;
-	font-weight: 600;
+#about-section header h2 {
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+#about-section p {
+	color: #cdcdcd;
+}
+
+/* Skills Section */
+#skills-section {
+	height: 700px;
+	width: 100%;
+	background-color: #262334;
+	color: #3d4449;
+	padding: 0px 5em 1px 5em;
+}
+
+#skills-section h1 {
+	padding-left: 15px;
+	padding-bottom: 0px;
+	border-left: 5px solid #57bcc5;
+	border-bottom: 0px;
 }
 
 /* Footer */
