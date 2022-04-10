@@ -95,7 +95,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #1b1f22;
+		background: #1a1a21;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -176,10 +176,8 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
-		font-weight: 600;
 		line-height: 1.5;
 		margin: 0 0 1rem 0;
-		text-transform: uppercase;
 		letter-spacing: 0.2rem;
 	}
 
@@ -202,6 +200,8 @@ input, select, textarea {
 		font-size: 2.25rem;
 		line-height: 1.3;
 		letter-spacing: 0.5rem;
+		text-transform: uppercase;
+		font-weight: 600;
 	}
 
 	h2 {
@@ -1158,10 +1158,11 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/bg2.png");
+			background-image: url("../../images/bg3.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
+			background-color: #40777a;
 			z-index: 1;
 		}
 
@@ -1177,7 +1178,7 @@ input, select, textarea {
 		}
 
 		body.is-preload #bg:before {
-			background-color: #000000;
+			background-color: #1a1a23;
 		}
 
 /* Wrapper */
@@ -1291,16 +1292,19 @@ input, select, textarea {
 			}
 
 		#header .logo {
-			width: 5.5rem;
-			height: 5.5rem;
+			position: relative;
+			width: 14rem;
+			height: 14rem;
 			line-height: 5.5rem;
 			border: solid 1px #ffffff;
 			border-radius: 100%;
+			overflow: hidden;
 		}
 
-			#header .logo .icon:before {
-				font-size: 2rem;
-			}
+		#header .logo .picture {
+			display: inline-block;
+			width: 100%;
+		}
 
 		#header .content {
 			border-style: solid;
@@ -1322,6 +1326,17 @@ input, select, textarea {
 				padding: 3rem 2rem;
 				max-height: 40rem;
 				overflow: hidden;
+			}
+
+			#header .content .inner .inner-mask {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: #1b1a22;
+				width: 100%;
+				height: 100%;
+				filter: blur(50px);
+				z-index: -1;
 			}
 
 				#header .content .inner > :last-child {
@@ -1361,15 +1376,17 @@ input, select, textarea {
 					min-width: 7.5rem;
 					height: 2.75rem;
 					line-height: 2.75rem;
-					padding: 0 1.25rem 0 1.45rem;
 					text-transform: uppercase;
 					letter-spacing: 0.2rem;
-					font-size: 0.8rem;
+					font-size: 1rem;
 					border-bottom: 0;
+					transition: 0.5s;
+					transition-timing-function: linear;
 				}
 
 					#header nav ul li a:hover {
 						background-color: rgba(255, 255, 255, 0.075);
+						color: white;
 					}
 
 					#header nav ul li a:active {
@@ -1446,15 +1463,15 @@ input, select, textarea {
 				line-height: 4.75rem;
 			}
 
-				#header .logo .icon:before {
-					font-size: 1.75rem;
-				}
+			#header .logo .icon:before {
+				font-size: 1.75rem;
+			}
 
 			#header .content .inner {
 				padding: 2.5rem 1rem;
 			}
 
-			#header .content p {
+			#header .content h3 {
 				line-height: 1.875;
 			}
 
@@ -1546,7 +1563,7 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
+			background-color: #40777a;
 			border-radius: 4px;
 			opacity: 0;
 		}
