@@ -1658,6 +1658,12 @@ input, select, textarea {
 	color: #3d4449;
 }
 
+@media screen and (max-width: 480px) {
+	#intro {
+		padding: 50px 15px;
+	}
+}
+
 /* About Section */
 #about {
 	width: 100%;
@@ -1693,6 +1699,15 @@ input, select, textarea {
     margin-bottom: 50px;
 }
 
+@media screen and (max-width: 480px) {
+	#about {
+		padding: 50px 15px;
+	}
+
+	#about .button {
+		margin-bottom: 0px;
+	}
+}
 
 /* Skills Section */
 #skills-section {
@@ -1730,6 +1745,22 @@ input, select, textarea {
 
 #skills-section li {
 	color: #cdcdcd;
+}
+
+@media screen and (max-width: 1200px) {
+	#skills-section {
+		padding: 20px 10px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#skills-section {
+		padding: 20px 15px;
+	}
+
+	#skills-body {
+		display: block;
+	}
 }
 
 /* Projects Section */
@@ -1809,6 +1840,69 @@ input, select, textarea {
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1400px) {
+	#projects {
+		padding: 50px 0px;
+	}
+
+	#projects .project-card {
+		padding: 20px 20px;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#projects {
+		padding: 50px 0px;	
+	}
+
+	#projects .projects-body {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#projects .project-card {
+		padding: 1px 20px;
+		border-top: none;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#projects {
+		padding: 20px 15px;
+	}
+
+	#projects .projects-body {
+		grid-template-columns: 1fr;
+	}
+
+	#projects .project-card {
+		position: relative;
+		display: inline-block;
+		/* padding: 1px 50px; */
+		padding-top: 2.2rem;
+		padding: 1px;
+	}
+
+	#projects .project-card:before {
+		display: none;
+	}
+	
+	#projects .project-card figcaption {
+		margin-bottom: 5px;
+	}
+
+	#projects .card-body ul {
+		margin-bottom: 10px;
+	}
+
+	#projects .card-body p {
+		margin-bottom: 5px;
+	}
+
+	#projects .project-card .button {
+		margin-bottom: 30px;
+	}
 }
 
 /* Project Page */
