@@ -27,52 +27,22 @@
 					<h1>Portfólio de Projetos</h1>
 					<h3 style="color: #ccc;">Olá, seja muito <b>bem-vindo(a)</b> ao meu portfólio de projetos de
 						<b>Ciência de
-							Dados</b>.</h3>
+							Dados</b>.
+					</h3>
 				</div>
 			</div>
 			<nav>
 				<ul>
 					<li><a href="#intro">Intro</a></li>
 					<li><a href="#about">Sobre</a></li>
-					<li><a href="projetos.html">Projetos</a></li>
-					<li><a href="#contact">Contato</a></li>
-					<!--<li><a href="#elements">Elements</a></li>-->
+					<li><a href="#projects">Projetos</a></li>
+					<li><a id="contact-modal-open" href="#contact">Contato</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<!-- Main -->
 		<div id="main">
-
-			<!-- Intro -->
-			<article id="intro">
-				<h2 class="major">Intro</h2>
-				<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-
-				<p>Nessa página, eu demonstro minhas habilidades de resolver problemas de negócio utilizando conceitos e
-					ferramentas da Ciência de Dados, através de projetos com dados públicos.</p>
-				<p>Você vai encontrar também, minhas experiências profissionais, habilidades, ferramentas e conceitos
-					envolvendo a Ciência de Dados.</p>
-				<p>Sinta-se à vontade para entrar em contato comigo através dos links disponíveis na área de <a
-						href="#contact">Contato</a>.</p>
-			</article>
-
-			<!-- About -->
-			<article id="about">
-				<h2 class="major">Sobre</h2>
-				<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-				<p>Meu nome é <b>Gustavo Barros</b>, atualmente estou cursando graduação em <i>Big Data e Inteligência
-						Analítica</i> pela UNP e prestes a iniciar a minha segunda graduação, em paralelo na UFPB,
-					cursando Ciência de Dados e Inteligência Artificial.</p>
-				<p>Atualmente, trabalho de forma autônoma vendendo templates de sites e aplicativos no <a
-						href="https://codecanyon.net/author_dashboard">Envato Market</a> e trilho uma jornada de estudos
-					para me tornar um Cientista de Dados, realizando cursos reconhecidos pelo mercado e desenvolvendo
-					projetos pessoais sobre Ciência de Dados, sempre visando adquirir experiência na solução de
-					problemas de negócio e domínio sobre as feramentas de análise de dados.</p>
-				<p>Estou buscando uma oportunidade de trabalhar profissionalmente como Cientista de Dados para melhorar
-					a tomada de decisão da empresa, através da construção de soluções usando dados.</p>
-			</article>
-
 			<!-- Contact -->
 			<article id="contact">
 				<h2 class="major">Contato</h2>
@@ -92,8 +62,8 @@
 						</div>
 					</div>
 					<ul class="actions">
-						<li><input type="submit" value="Send Message" class="primary" /></li>
-						<li><input type="reset" value="Reset" /></li>
+						<li><input type="submit" value="Enviar Mensagem" class="primary" /></li>
+						<li><input type="reset" value="Resetar" /></li>
 					</ul>
 				</form>
 				<ul class="icons">
@@ -109,10 +79,10 @@
 			</article>
 		</div>
 		<!-- BG -->
-		<!-- <div id="bg"></div> -->
+		<div id="bg"></div>
 	</div>
 
-	<section id="intro-section" class="inner">
+	<section id="intro" class="inner">
 		<header>
 			<h1 class="major">Introdução</h1>
 			<p>CONHEÇA AS MINHAS HABILIDADES E MEUS PROJETOS</p>
@@ -124,11 +94,11 @@
 			<p>Você vai encontrar também, minhas experiências profissionais, habilidades, ferramentas e conceitos
 				envolvendo a Ciência de Dados.</p>
 			<p>Sinta-se à vontade para entrar em contato comigo através dos links disponíveis na área de <a
-					href="#contact">Contato</a>.</p>
+					href="#contact" style="text-decoration: underline;color: #438fad;">Contato</a>.</p>
 		</div>
 	</section>
 
-	<section id="about-section" class="inner">
+	<section id="about" class="inner">
 		<header>
 			<h1 class="major">Sobre mim</h1>
 			<h2>Meu nome é Gustavo Barros</h2>
@@ -146,6 +116,7 @@
 				<p>Estou buscando uma oportunidade de trabalhar profissionalmente como Cientista de Dados para
 					melhorar a tomada de decisão da empresa, através da construção de soluções usando dados.</p>
 			</article>
+			<a href="#contact" class="button">Ver Contato</a>
 		</div>
 	</section>
 
@@ -153,9 +124,204 @@
 		<header>
 			<h1 class="major">Habilidades</h1>
 		</header>
-		<div class="container-skills">
-			
+
+		<div id="skills-body">
+			<div>
+				<h3 class="major">Linguagens de Programação e Banco de Dados</h3>
+				<ul>
+					<li>Python com foco em análise de dados</li>
+					<li>Web scrcaping com Python</li>
+					<li>JavaScript, php, Java e Dart</li>
+					<li>SQL para extração de dados</li>
+					<li>Banco de Dados SQLite, Postres, MySQL e MongoDB</li>
+				</ul>
+			</div>
+	
+			<div>
+				<h3 class="major">Visualização de Dados</h3>
+				<ul>
+					<li>Matplotlib, Seaborn, Plotly e Bokeh</li>
+					<li>Power BI, Tableau, Metabase e Looker</li>
+				</ul>
+			</div>
+
+			<div>
+				<h3 class="major">Estatística e Machine Learning</h3>
+				<ul>
+					<li>Estatística descritiva (localização. dispersão. assimetria, kurtosis, densidade)</li>
+					<li>Algoritmos de Regressão, classificação, clusterização e "learn to rank"</li>
+					<li>Técnicas de balanceamento dos dados, seleção de atributos e redução de dimensionalidade</li>
+					<li>Métricas de performance dos algoritmos (RMSE, MAE, MAPE, Confusion Matrix, Precisão, Recall, Curva
+						ROC,
+						Curva Lift, AUC, Silhouette Score, DB-Index)</li>
+					<li>Pacotes de Machine Learning: <b>PyTorch</b>, Sklearn e Scipy</li>
+				</ul>
+			</div>
+	
+			<div>
+				<h3 class="major">Engenharia de Software</h3>
+				<ul>
+					<li>Git, Github, GitLab, Cookiecutter, Virtual Enviroment e Docker</li>
+					<li>Streamlit, Flask, API's</li>
+					<li>Cloud Heroku, AWS Amazon e Google Cloud Platform (GCP)</li>
+				</ul>
+			</div>
 		</div>
+	</section>
+
+	<section id="projects">
+		<header>
+			<h1 class="major">Projetos de Ciência de Dados</h1>
+		</header>
+
+		<div class="projects-body">
+			<div class="project-card">
+				<figure>
+					<img src="images/fideliza.jpg" alt="">
+					<figcaption>Construção de um programa de fidelidade com clusterização de clientes</figcaption>
+				</figure>
+				<div class="card-body">
+					<p>Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para segmentar um
+						grupo de clientes com base em suas características de performance de compra, a fim de selecionar
+						grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita da
+						empresa. E o resultado desa solução, caso fosse implementada, seria de R$ 15MM de dólares de
+						receita anual.</p>
+					<h3 class="major">As ferramentas utilizadas foram:</h3>
+					<ul>
+						<li>Git, Gitlab e Github</li>
+						<li>Pytho, Pandas, Matplotlib e Seaborn</li>
+						<li>Jupyter Notebook</li>
+						<li>K-Means, Hierarquical Clustering, DBScan</li>
+						<li>AWS Cloud (EC2, S3, Postgres, SQLite)</li>
+						<li>Metabase Visualization</li>
+
+					</ul>
+					<a href="#" class="button">Ver mais</a>
+				</div>
+			</div>
+			<div class="project-card">
+				<figure>
+					<img src="images/img3.jpg" alt="">
+					<figcaption>Previsão de dados de compartilhamento de bicicletas</figcaption>
+				</figure>
+				<div class="card-body">
+					<p>Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para segmentar um
+						grupo de clientes com base em suas características de performance de compra, a fim de selecionar
+						grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita da
+						empresa. E o resultado desa solução, caso fosse implementada, seria de R$ 15MM de dólares de
+						receita anual.</p>
+					<h3 class="major">As ferramentas utilizadas foram:</h3>
+					<ul>
+						<li>Git, Gitlab e Github</li>
+						<li>Pytho, Pandas, Matplotlib e Seaborn</li>
+						<li>Jupyter Notebook</li>
+						<li>K-Means, Hierarquical Clustering, DBScan</li>
+						<li>AWS Cloud (EC2, S3, Postgres, SQLite)</li>
+						<li>Metabase Visualization</li>
+
+					</ul>
+					<a href="#" class="button">Ver mais</a>
+				</div>
+			</div>
+			<div class="project-card">
+				<figure>
+					<img src="images/img2.jpg" alt="">
+					<figcaption>Previsão de preços de imóveis em Boston</figcaption>
+				</figure>
+				<div class="card-body">
+					<p>Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para segmentar um
+						grupo de clientes com base em suas características de performance de compra, a fim de selecionar
+						grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita da
+						empresa. E o resultado desa solução, caso fosse implementada, seria de R$ 15MM de dólares de
+						receita anual.</p>
+					<h3 class="major">As ferramentas utilizadas foram:</h3>
+					<ul>
+						<li>Git, Gitlab e Github</li>
+						<li>Pytho, Pandas, Matplotlib e Seaborn</li>
+						<li>Jupyter Notebook</li>
+						<li>K-Means, Hierarquical Clustering, DBScan</li>
+						<li>AWS Cloud (EC2, S3, Postgres, SQLite)</li>
+						<li>Metabase Visualization</li>
+
+					</ul>
+					<a href="#" class="button">Ver mais</a>
+				</div>
+			</div>
+			<div class="project-card">
+				<figure>
+					<img src="images/img1.jpg" alt="">
+					<figcaption>Análise Exploratória dos dados de uma empresa de compartilhamento de bicicletas em
+						Chicago</figcaption>
+				</figure>
+				<div class="card-body">
+					<p>Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para segmentar um
+						grupo de clientes com base em suas características de performance de compra, a fim de selecionar
+						grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita da
+						empresa. E o resultado desa solução, caso fosse implementada, seria de R$ 15MM de dólares de
+						receita anual.</p>
+					<h3 class="major">As ferramentas utilizadas foram:</h3>
+					<ul>
+						<li>Git, Gitlab e Github</li>
+						<li>Pytho, Pandas, Matplotlib e Seaborn</li>
+						<li>Jupyter Notebook</li>
+						<li>K-Means, Hierarquical Clustering, DBScan</li>
+						<li>AWS Cloud (EC2, S3, Postgres, SQLite)</li>
+						<li>Metabase Visualization</li>
+
+					</ul>
+					<a href="projetos/projeto-03.html" class="button">Ver mais</a>
+				</div>
+			</div>
+			<div class="project-card">
+				<figure>
+					<img src="images/ml_in_oop.png" alt="">
+					<figcaption>Utilizando Orientação à Objetos na construção de Redes Neurais</figcaption>
+				</figure>
+				<div class="card-body">
+					<p>Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para segmentar um
+						grupo de clientes com base em suas características de performance de compra, a fim de selecionar
+						grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita da
+						empresa. E o resultado desa solução, caso fosse implementada, seria de R$ 15MM de dólares de
+						receita anual.</p>
+					<h3 class="major">As ferramentas utilizadas foram:</h3>
+					<ul>
+						<li>Git, Gitlab e Github</li>
+						<li>Pytho, Pandas, Matplotlib e Seaborn</li>
+						<li>Jupyter Notebook</li>
+						<li>K-Means, Hierarquical Clustering, DBScan</li>
+						<li>AWS Cloud (EC2, S3, Postgres, SQLite)</li>
+						<li>Metabase Visualization</li>
+
+					</ul>
+					<a href="#" class="button">Ver mais</a>
+				</div>
+			</div>
+			<div class="project-card">
+				<figure>
+					<img src="images/simple_python_crud.png" alt="">
+					<figcaption>Python - Aplicação CRUD no terminal</figcaption>
+				</figure>
+				<div class="card-body">
+					<p>Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para segmentar um
+						grupo de clientes com base em suas características de performance de compra, a fim de selecionar
+						grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita da
+						empresa. E o resultado desa solução, caso fosse implementada, seria de R$ 15MM de dólares de
+						receita anual.</p>
+					<h3 class="major">As ferramentas utilizadas foram:</h3>
+					<ul>
+						<li>Git, Gitlab e Github</li>
+						<li>Pytho, Pandas, Matplotlib e Seaborn</li>
+						<li>Jupyter Notebook</li>
+						<li>K-Means, Hierarquical Clustering, DBScan</li>
+						<li>AWS Cloud (EC2, S3, Postgres, SQLite)</li>
+						<li>Metabase Visualization</li>
+
+					</ul>
+					<a href="#" class="button">Ver mais</a>
+				</div>
+			</div>
+		</div>
+
 	</section>
 
 	<!-- Footer -->
@@ -167,9 +333,7 @@
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/browser.min.js"></script>
 	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
 </body>
 
 </html>

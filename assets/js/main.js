@@ -6,6 +6,14 @@
 
 (function($) {
 
+	$('#header').on('click', 'a[href^="#"]:not(#contact-modal-open)', function (event) {
+		event.preventDefault();
+	
+		$('html, body').animate({
+			scrollTop: $($.attr(this, 'href')).offset().top
+		}, 500);
+	});
+
 	var	$window = $(window),
 		$body = $('body'),
 		$wrapper = $('#wrapper'),
