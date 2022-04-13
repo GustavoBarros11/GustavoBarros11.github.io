@@ -1911,13 +1911,23 @@ input, select, textarea {
 	width: 100vw;
     background-color: #fff;
     color: #3d4449;
-    padding: 50px 0px;
     border-bottom: solid 5px rgba(5, 106, 146, 0.75);
 }
 
 #wrapper-project-page .container {
 	width: 1140px;
 	margin: 0 auto;
+}
+
+#wrapper-project-page .button {
+	color: #57bcc5 !important;
+    border: 2px solid #57bcc5;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 25px 0px;
+	text-decoration: none;
 }
 
 #proj-title {
@@ -1954,6 +1964,37 @@ input, select, textarea {
 
 #wrapper-project-page h2, #wrapper-project-page h3 {
 	letter-spacing: .2rem;
+}
+
+@media screen and (max-width: 1200px) {
+	#wrapper-project-page .container {
+		width: 940px;
+	}
+
+	#wrapper-project-page figure img {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#wrapper-project-page .container {
+		width: 710px;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#wrapper-project-page .container {
+		width: 100vw;
+		padding: 0px 1rem;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	#proj-title {
+		padding: 15px 0.5rem 15px 0.5rem;
+		font-size: 1.4rem !important;
+		border-radius: 5px;
+	}
 }
 
 /* Footer */
