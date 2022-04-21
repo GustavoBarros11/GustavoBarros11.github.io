@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Gustavo Barros</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<div id="wrapper-project-page">
+		<div class="container">
+			<a href="../index.html" class="button"><<< Voltar</a>
+			<h1 id="proj-title">Previsão de preços de imóveis em Boston</h1>
+			<figure>
+				<img src="../images/img2.jpg" alt="">
+			</figure>
+			<p class="description">Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para
+				segmentar um grupo de clientes com base em suas características de performance de compra, a fim de
+				selecionar grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita
+				da empresa. E o resultado desa solução, caso fosse implementada, seria de R$ 15MM de dólares de receita
+				anual.</p>
+
+			<h1 id="1-quest-es-de-neg-cio">1. Questões de negócio</h1>
+			<hr>
+			<ol>
+				<li>Quais são os imóveis que a House Rocket deveria comprar e por qual preço?</li>
+				<li>Uma vez o imóvel comprado, qual o melhor momento para vendê-lo e por qual preço?</li>
+			</ol>
+			<h1 id="2-premissas-do-projeto">2. Premissas do Projeto</h1>
+			<hr>
+			<ul>
+				<li>Valores de &quot;ID&quot; duplicados foram excluídos.</li>
+				<li>A coluna &quot;price&quot; representa o valor de compra do imóvel.</li>
+				<li>O preço das casas é influenciado pela região (zipcode) e estação do ano (seasons)</li>
+				<li>Imóveis considerados boas oportunidades de compra são os imóveis que estão em bom estado e abaixo do
+					preço médio da região</li>
+				<li>Para a decisão do preço de venda são consideradas três features, o preço de compra, a região e a
+					estação do ano<ul>
+						<li>Se o preço de compra for menor que o preço médio da região na determinada estação, o preço
+							de venda será 30% maior que o preço de compra</li>
+						<li>Se for maior, o acrescimo será de 10%</li>
+					</ul>
+				</li>
+			</ul>
+			<h1 id="3-planejamento-da-solu-o">3. Planejamento da Solução</h1>
+			<hr>
+			<h2 id="3-1-produto-final">3.1 Produto Final</h2>
+			<ul>
+				<li>Relatório com as sugestões de compra do imóvel por um valor recomendado</li>
+				<li>Relatório com as sugestões de venda de um imóvel por um valor recomendado</li>
+				<li>Aplicativo contendo detalhes das casas e recomendações: <a
+						href="https://report-house-rocket.herokuapp.com/">https://report-house-rocket.herokuapp.com/</a>
+				</li>
+			</ul>
+			<div align="center">
+				<img src="imagens/app_streamlit.png" width="800px">
+			</div>
+
+			<h2 id="3-2-ferramentas">3.2 Ferramentas</h2>
+			<ul>
+				<li>Python 3.8.1</li>
+				<li>Jupyter Notebook</li>
+			</ul>
+			<h2 id="3-3-processo">3.3 Processo</h2>
+			<h3 id="3-3-1-estrat-gia-de-solu-o">3.3.1 Estratégia de solução</h3>
+			<ol>
+				<li>Entendimento do modelo de negócio da empresa</li>
+				<li>Entendimento do problema de negócio</li>
+				<li>Coleta dos Dados</li>
+				<li>Limpeza dos dados</li>
+				<li>Análise Exploratória dos Dados</li>
+				<li>Levantamento de hipóteses</li>
+				<li>Validação das hipóteses e Insights gerados</li>
+			</ol>
+			<h3 id="3-3-2-etapas-de-solu-o">3.3.2 Etapas de solução</h3>
+			<p>→ Recomendação de compra de imóveis</p>
+			<ul>
+				<li>Coletar os dados do site do kaggle<ul>
+						<li>Agrupar os dados pela região (zipcode e estação)</li>
+						<li>Calcular a mediana do preço dos imóveis por região</li>
+						<li>Sugerir que os imóveis que estão abaixo do preço mediano de cada região e que estejam em
+							boas condições sejam comprados</li>
+						<li>Salvar recomendações em .csv</li>
+					</ul>
+				</li>
+			</ul>
+			<p>→ Recomendação do preço de venda dos imóveis</p>
+			<ul>
+				<li>Agrupando dados por região e estação</li>
+				<li>Combinando com o Dataframe original</li>
+				<li>Adicionar features de ‘sell_price” de acordo com as premissas</li>
+				<li>Adicionar feature ‘profit’</li>
+				<li>Salvar em .csv</li>
+			</ul>
+			<h1 id="4-explora-o-de-dados">4. Exploração de dados</h1>
+			<hr>
+			<h2 id="4-1-teste-de-hi-teses">4.1 Teste de Hióteses</h2>
+			<ul>
+				<li>
+					<p>H1: Imóvel que possuem vista para água são 30% mais caros na média</p>
+					<p> <em>→ <strong>Falso</strong>, imóveis com vista para a água são em média <strong>212% mais
+								caros</strong></em></p>
+				</li>
+			</ul>
+			<div align="center">
+				<img src="imagens/H1.png" width="700px">
+			</div>
+
+
+			<ul>
+				<li>
+					<p>H2: Imóveis com data de construção menor que 1955 são 50% mais baratos na média</p>
+					<p> <em>→ <strong>Falso</strong>, casas não reformadas são <strong>43% mais baratas</strong> em
+							média que casas reformadas</em></p>
+				</li>
+			</ul>
+			<div align="center">
+				<img src="imagens/H2.png" width="700px">
+			</div>
+
+			<ul>
+				<li>
+					<p>H3: Imóveis sem porão possuem área total (sqrt_lot) são 40% maiores do que os imóveis com porão
+					</p>
+					<p> → <strong>*Falso</strong>, imóveis sem porão possuem área total <strong>19% maior</strong> que
+						imóveis com porão*</p>
+				</li>
+			</ul>
+			<div align="center">
+				<img src="imagens/H3.png" width="700px">
+			</div>
+
+			<ul>
+				<li>
+					<p>H4: O crescimento do preço dos imóveis YoY (Year over Year) é de 10%</p>
+					<p> <em>→ <strong>Falso</strong>, o crescimento de preços YoY é de <strong>0,7%</strong></em></p>
+				</li>
+			</ul>
+			<div align="center">
+				<img src="imagens/H4.png" width="700px">
+			</div>
+
+			<ul>
+				<li>
+					<p>H5: Imóveis com 3 banheiros tem um crescimento de MoM (Month over Month) de 15%</p>
+					<p> <em>→ <strong>Falso</strong>, o crescimento médio MoM dos imóveis com 3 banheiros no período
+							analisado é de <strong>0,29%</strong></em></p>
+				</li>
+			</ul>
+			<div align="center">
+				<img src="imagens/H5.png" width="900px">
+			</div>
+
+			<ul>
+				<li>
+					<p>H6: No inverno as casas são em média 30% mais baratas que nas outras estações</p>
+					<p> <em>→ <strong>Falso</strong>, no inverno, as casas são em média <strong>4% mais baratas</strong>
+							que nas outras estações</em></p>
+				</li>
+			</ul>
+			<div align="center">
+				<img src="imagens/H6.png" width="700px">
+			</div>
+
+			<ul>
+				<li>
+					<p>H7: Casas com um alto grau de qualidade e design são até 50% mais caras</p>
+					<p> <em>→ <strong>False</strong>, casas com um alto grau de qualidade e design são em média
+							<strong>227% mais caras</strong></em></p>
+				</li>
+			</ul>
+			<div align="center">
+				<img src="imagens/H7.png" width="700px">
+			</div>
+
+			<ul>
+				<li>
+					<p>H8: Imóveis não reformados são 10% mais baratos do que a média dos imóveis reformados por região.
+					</p>
+					<p> <em>→ <strong>Falso</strong>, imóveis não reformados são em média <strong>43,52% mais
+								baratos</strong> que imóveis reformados</em></p>
+				</li>
+			</ul>
+			<div align="center">
+				<img src="imagens/H8.png" width="700px">
+			</div>
+
+			<h1 id="5-resultados-finaneiros-para-o-neg-cio">5. Resultados Finaneiros para o Negócio</h1>
+			<hr>
+			<p>Após a análise, dentre os 21.435 imóveis disponíveis para a compra na região de King Country, 3808 foram
+				sugeridos para compra e detalhados em relatório.</p>
+			<p>Caso os imóveis sugeridos sejam comprados, o investimento inicial esperado é de $11,5 bilhões. Após a
+				revenda de todos os imóveis, será arrecadado um total de $13,5 bilhões de dólares e o lucro total
+				previsto é de 1,97 bilhões, totalizando 17% de retorno sobre o capital incialmente investido</p>
+			<div align="center">
+				<img src="imagens/resultado_de_negocios.png" width="700px">
+			</div>
+
+			<h1 id="6-pr-ximos-passos">6. Próximos passos</h1>
+			<hr>
+			<ul>
+				<li>Aplicar métodos mais robustos para o tratamento de outliers</li>
+				<li>Aplicar modelo de machine learning capaz de avaliar boas oportunidades de compra considerando os
+					atributos do imóvel</li>
+				<li>Aplicar modelo de machine learning capaz de recomendar o melhor preço de venda das casas</li>
+			</ul>
+
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<p class="copyright">&copy; Gustavo Barros, 2022</p>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>
