@@ -15,202 +15,248 @@
 
 	<div id="wrapper-project-page">
 		<div class="container">
-			<a href="../index.html" class="button"><<< Voltar</a>
-			<h1 id="proj-title">Criando um Classificador de Raças de Cachorro com uma CNN</h1>
-			<figure>
-				<img src="../images/dog_breed_classifier.jpeg" alt="">
-			</figure>
-			<p class="description">Eu usei Python, Estatística e técnicas não-supervisionadas de Machine Learning para
-				segmentar um grupo de clientes com base em suas características de performance de compra, a fim de
-				selecionar grupos de clientes para formar um programa de Fidelidade com o objetivo de aumentar a receita
-				da empresa. E o resultado desa solução, caso fosse implementada, seria de R$ 15MM de dólares de receita
-				anual.</p>
+			<a href="../index.html" class="button">
+				<<< Voltar</a>
+					<h1 id="proj-title">Classifying Dog Breed with a CNN</h1>
+					<figure>
+						<img src="../images/dog_breed_classifier.jpeg" alt="">
+					</figure>
+					<br>
+					<h1 style="margin-top: 10px;">Table of Contents:</h1>
+					<ol class="table-of-contents">
+						<li><a href="#sec1">Project Overview</a></li>
+						<li><a href="#sec2">Project Assumptions</a></li>
+						<li><a href="#sec3">Data Dictionary</a></li>
+						<li><a href="#sec4">Solution Planning</a></li>
+						<li><a href="#sec5">Project Results</a></li>
+						<li><a href="#sec6">Conclusions</a></li>
+						<li><a href="#sec7">References</a></li>
+						<li><a href="#sec8">Next Steps</a></li>
+					</ol>
 
-			<h1 id="1-quest-es-de-neg-cio">1. Questões de negócio</h1>
-			<hr>
-			<ol>
-				<li>Quais são os imóveis que a House Rocket deveria comprar e por qual preço?</li>
-				<li>Uma vez o imóvel comprado, qual o melhor momento para vendê-lo e por qual preço?</li>
-			</ol>
-			<h1 id="2-premissas-do-projeto">2. Premissas do Projeto</h1>
-			<hr>
-			<ul>
-				<li>Valores de &quot;ID&quot; duplicados foram excluídos.</li>
-				<li>A coluna &quot;price&quot; representa o valor de compra do imóvel.</li>
-				<li>O preço das casas é influenciado pela região (zipcode) e estação do ano (seasons)</li>
-				<li>Imóveis considerados boas oportunidades de compra são os imóveis que estão em bom estado e abaixo do
-					preço médio da região</li>
-				<li>Para a decisão do preço de venda são consideradas três features, o preço de compra, a região e a
-					estação do ano<ul>
-						<li>Se o preço de compra for menor que o preço médio da região na determinada estação, o preço
-							de venda será 30% maior que o preço de compra</li>
-						<li>Se for maior, o acrescimo será de 10%</li>
-					</ul>
-				</li>
-			</ul>
-			<h1 id="3-planejamento-da-solu-o">3. Planejamento da Solução</h1>
-			<hr>
-			<h2 id="3-1-produto-final">3.1 Produto Final</h2>
-			<ul>
-				<li>Relatório com as sugestões de compra do imóvel por um valor recomendado</li>
-				<li>Relatório com as sugestões de venda de um imóvel por um valor recomendado</li>
-				<li>Aplicativo contendo detalhes das casas e recomendações: <a
-						href="https://report-house-rocket.herokuapp.com/">https://report-house-rocket.herokuapp.com/</a>
-				</li>
-			</ul>
-			<div align="center">
-				<img src="imagens/app_streamlit.png" width="800px">
-			</div>
-
-			<h2 id="3-2-ferramentas">3.2 Ferramentas</h2>
-			<ul>
-				<li>Python 3.8.1</li>
-				<li>Jupyter Notebook</li>
-			</ul>
-			<h2 id="3-3-processo">3.3 Processo</h2>
-			<h3 id="3-3-1-estrat-gia-de-solu-o">3.3.1 Estratégia de solução</h3>
-			<ol>
-				<li>Entendimento do modelo de negócio da empresa</li>
-				<li>Entendimento do problema de negócio</li>
-				<li>Coleta dos Dados</li>
-				<li>Limpeza dos dados</li>
-				<li>Análise Exploratória dos Dados</li>
-				<li>Levantamento de hipóteses</li>
-				<li>Validação das hipóteses e Insights gerados</li>
-			</ol>
-			<h3 id="3-3-2-etapas-de-solu-o">3.3.2 Etapas de solução</h3>
-			<p>→ Recomendação de compra de imóveis</p>
-			<ul>
-				<li>Coletar os dados do site do kaggle<ul>
-						<li>Agrupar os dados pela região (zipcode e estação)</li>
-						<li>Calcular a mediana do preço dos imóveis por região</li>
-						<li>Sugerir que os imóveis que estão abaixo do preço mediano de cada região e que estejam em
-							boas condições sejam comprados</li>
-						<li>Salvar recomendações em .csv</li>
-					</ul>
-				</li>
-			</ul>
-			<p>→ Recomendação do preço de venda dos imóveis</p>
-			<ul>
-				<li>Agrupando dados por região e estação</li>
-				<li>Combinando com o Dataframe original</li>
-				<li>Adicionar features de ‘sell_price” de acordo com as premissas</li>
-				<li>Adicionar feature ‘profit’</li>
-				<li>Salvar em .csv</li>
-			</ul>
-			<h1 id="4-explora-o-de-dados">4. Exploração de dados</h1>
-			<hr>
-			<h2 id="4-1-teste-de-hi-teses">4.1 Teste de Hióteses</h2>
-			<ul>
-				<li>
-					<p>H1: Imóvel que possuem vista para água são 30% mais caros na média</p>
-					<p> <em>→ <strong>Falso</strong>, imóveis com vista para a água são em média <strong>212% mais
-								caros</strong></em></p>
-				</li>
-			</ul>
-			<div align="center">
-				<img src="imagens/H1.png" width="700px">
-			</div>
-
-
-			<ul>
-				<li>
-					<p>H2: Imóveis com data de construção menor que 1955 são 50% mais baratos na média</p>
-					<p> <em>→ <strong>Falso</strong>, casas não reformadas são <strong>43% mais baratas</strong> em
-							média que casas reformadas</em></p>
-				</li>
-			</ul>
-			<div align="center">
-				<img src="imagens/H2.png" width="700px">
-			</div>
-
-			<ul>
-				<li>
-					<p>H3: Imóveis sem porão possuem área total (sqrt_lot) são 40% maiores do que os imóveis com porão
+					<h1 id="sec1">1. Project Overview</h1>
+					<hr>
+					<p>
+						Welcome to the Convolutional Neural Networks (CNN) project! In this project, you will learn how
+						to
+						build a pipeline to process real-world, user-supplied images. Given an image of a dog, your
+						algorithm will identify an estimate of the canine’s breed. If supplied an image of a human, the
+						code
+						will identify the resembling dog breed.
 					</p>
-					<p> → <strong>*Falso</strong>, imóveis sem porão possuem área total <strong>19% maior</strong> que
-						imóveis com porão*</p>
-				</li>
-			</ul>
-			<div align="center">
-				<img src="imagens/H3.png" width="700px">
-			</div>
-
-			<ul>
-				<li>
-					<p>H4: O crescimento do preço dos imóveis YoY (Year over Year) é de 10%</p>
-					<p> <em>→ <strong>Falso</strong>, o crescimento de preços YoY é de <strong>0,7%</strong></em></p>
-				</li>
-			</ul>
-			<div align="center">
-				<img src="imagens/H4.png" width="700px">
-			</div>
-
-			<ul>
-				<li>
-					<p>H5: Imóveis com 3 banheiros tem um crescimento de MoM (Month over Month) de 15%</p>
-					<p> <em>→ <strong>Falso</strong>, o crescimento médio MoM dos imóveis com 3 banheiros no período
-							analisado é de <strong>0,29%</strong></em></p>
-				</li>
-			</ul>
-			<div align="center">
-				<img src="imagens/H5.png" width="900px">
-			</div>
-
-			<ul>
-				<li>
-					<p>H6: No inverno as casas são em média 30% mais baratas que nas outras estações</p>
-					<p> <em>→ <strong>Falso</strong>, no inverno, as casas são em média <strong>4% mais baratas</strong>
-							que nas outras estações</em></p>
-				</li>
-			</ul>
-			<div align="center">
-				<img src="imagens/H6.png" width="700px">
-			</div>
-
-			<ul>
-				<li>
-					<p>H7: Casas com um alto grau de qualidade e design são até 50% mais caras</p>
-					<p> <em>→ <strong>False</strong>, casas com um alto grau de qualidade e design são em média
-							<strong>227% mais caras</strong></em></p>
-				</li>
-			</ul>
-			<div align="center">
-				<img src="imagens/H7.png" width="700px">
-			</div>
-
-			<ul>
-				<li>
-					<p>H8: Imóveis não reformados são 10% mais baratos do que a média dos imóveis reformados por região.
+					<p>
+						Along with exploring state-of-the-art CNN models for classification, you will make important
+						design
+						decisions about the user experience for your app. Our goal is that by completing this lab, you
+						understand the challenges involved in piecing together a series of models designed to perform
+						various tasks in a data processing pipeline. Each model has its strengths and weaknesses, and
+						engineering a real-world application often involves solving many problems without a perfect
+						answer.
+						Your imperfect solution will nonetheless create a fun user experience.
 					</p>
-					<p> <em>→ <strong>Falso</strong>, imóveis não reformados são em média <strong>43,52% mais
-								baratos</strong> que imóveis reformados</em></p>
-				</li>
-			</ul>
-			<div align="center">
-				<img src="imagens/H8.png" width="700px">
-			</div>
+					<h1 id="sec2">2. Project Assumptions</h1>
+					<hr>
+					<ul>
+						<li>Initial template code was already available for the project, my role was to add
+							key features to complete the project.</li>
+						<li>Sections starting with '(IMPLEMENTATION)' or '(ANSWER)' in the header indicate that the next block of code needed additional functionality that I provided.</li>
+						<li>We assumed that the images provided to the modelcontained a dog, cat or human.</li>
+						<li>Assumed that images had an minimal resolution quality.</li>
+						<li>There are a finite number of categories that can be classified.</li>
+						<li>This project aims to test the knowledge learned in the 'Convolutional Neural Networks' section of the Nanodegree Deep Learning from Udacity.</li>
+					</ul>
+					<h1 id="sec3">3. Data Dictionary</h1>
+					<hr>
+					<p>In this project a worked with 2 datasets. One with dog images and other with human faces, both
+						were divided into 3 sub groups, one for `train`, `test` and `validate`.</p>
 
-			<h1 id="5-resultados-finaneiros-para-o-neg-cio">5. Resultados Finaneiros para o Negócio</h1>
-			<hr>
-			<p>Após a análise, dentre os 21.435 imóveis disponíveis para a compra na região de King Country, 3808 foram
-				sugeridos para compra e detalhados em relatório.</p>
-			<p>Caso os imóveis sugeridos sejam comprados, o investimento inicial esperado é de $11,5 bilhões. Após a
-				revenda de todos os imóveis, será arrecadado um total de $13,5 bilhões de dólares e o lucro total
-				previsto é de 1,97 bilhões, totalizando 17% de retorno sobre o capital incialmente investido</p>
-			<div align="center">
-				<img src="imagens/resultado_de_negocios.png" width="700px">
-			</div>
+					<h3>dogs dataset</h3>
+					<ul>
+						<li>133 total dog categories.</li>
+						<li>8351 total dog images.</li>
+						<li>6680 training dog images.</li>
+						<li>835 validation dog images.</li>
+						<li>836 test dog images.</li>
+					</ul>
 
-			<h1 id="6-pr-ximos-passos">6. Próximos passos</h1>
-			<hr>
-			<ul>
-				<li>Aplicar métodos mais robustos para o tratamento de outliers</li>
-				<li>Aplicar modelo de machine learning capaz de avaliar boas oportunidades de compra considerando os
-					atributos do imóvel</li>
-				<li>Aplicar modelo de machine learning capaz de recomendar o melhor preço de venda das casas</li>
-			</ul>
+					<h3>human faces dataset</h3>
+					<ul>
+						<li>13233 total human images.</li>
+					</ul>
 
+					<h1 id="sec4">4. Solution Planning</h1>
+					<hr>
+					<h2 id="final-product">Final Product</h2>
+					<p>Develop an algorithm inside a notebook, that could be used in a mobile or web app, that receives
+						an image input from the user, detects if there is any dog inside that picture, if yes: provides
+						an estimate of the dog&#39;s breed. Otherwise, if no dog is detected in the image but a human
+						face was detected, provide the most resembling dog breed related to that human face.</p>
+					<h2 id="tech-stack">Tech Stack</h2>
+					<ul>
+						<li>Jupyter Notebook, VSCode</li>
+						<li>Python, Pandas, Numpy</li>
+						<li>Matplotlib</li>
+						<li>Keras, Scikit-learn</li>
+						<li>OpenCV</li>
+					</ul>
+					<h2 id="process-and-methods">Process and Methods</h2>
+					<p>I broke the notebok into separate steps, in order to easily grasp the whole picture of the
+						project and quickly change between tasks.</p>
+					<ul>
+						<li>
+							<a href="#step0">Step 0</a>: Import Datasets
+							<ul>
+								<li>METHOD: Extract a dataset of dog images with the use of the <code>load_files</code>
+									function from the scikit-learn library.<ul>
+										<li><code>train_files</code>, <code>valid_files</code>, <code>test_files</code>
+											- numpy arrays containing file paths to images</li>
+										<li><code>train_targets</code>, <code>valid_targets</code>,
+											<code>test_targets</code> - numpy arrays containing onehot-encoded
+											classification labels
+										</li>
+										<li><code>dog_names</code> - list of string-valued dog breed names for
+											translating labels</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step1">Step 1</a>: Detect Humans<ul>
+								<li>METHOD: <ul>
+										<li>Import a human images dataset provided by Udacity.</li>
+										<li>Use OpenCV&#39;s implementation of <a
+												href="http://docs.opencv.org/trunk/d7/d8b/tutorial_py_face_detection.html">Haar
+												feature-based cascade classifiers</a> as the model to detect human faces
+											in images.</li>
+										<li>Convert the images to grayscale</li>
+										<li>Write a function that return <code>True</code> if a human face is detected,
+											and <code>False</code> if the opposite.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step2">Step 2</a>: Detect Dogs<ul>
+								<li>METHOD:<ul>
+										<li>Convert the images to vectors</li>
+										<li>With Keras import the <em>ResNet-50</em> model to detect dos in the images.
+										</li>
+										<li>Supply the model with te image&#39;s vector</li>
+										<li>Make prediction, return <code>True</code> if the return category number is
+											one of the dogs category present in the ResNet-50 labels, return
+											<code>False</code> otherwise.
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step3">Step 3</a>: Create a CNN to Classify Dog Breeds (from Scratch)<ul>
+								<li>METHOD:<ul>
+										<li>Create from Scratch a Convolutional Neural Network that attain accuracy of
+											at least 1%</li>
+										<li>Pre-process Data</li>
+										<li>Define model architecture</li>
+										<li>Compile the model</li>
+										<li>Train and test the model</li>
+										<li>Evaluate the model (<strong>11% of accuracy</strong>)</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step4">Step 4</a>: Use a CNN to Classify Dog Breeds (using Transfer Learning)<ul>
+								<li>METHOD:<ul>
+										<li>Model architecture</li>
+										<li>Compile the model</li>
+										<li>Train and test the model</li>
+										<li>Evaluate the model (<strong>40.55% accuracy</strong>)</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step5">Step 5</a>: Create a CNN to Classify Dog Breeds (using Transfer Learning)
+							<ul>
+								<li>Obtani bottleneck features from:<ul>
+										<li>VGG-19</li>
+										<li>ResNet-50</li>
+										<li>Inception</li>
+										<li>Xception</li>
+									</ul>
+								</li>
+								<li>Model Architecture</li>
+								<li>Compile the model</li>
+								<li>Train the model</li>
+								<li>Load the model with best validation loss</li>
+								<li>Test the model</li>
+								<li>Predict Dog Breed with the selected model (<strong>86% accuracy</strong>)</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#step6">Step 6</a>: Write your Algorithm
+							<ul>
+								<li>
+									METHOD:
+									<pre><code class="lang-Python">
+### TODO: Write your algorithm.
+### Feel free to use <span class="hljs-keyword">as</span> many <span class="hljs-keyword">code</span> cells <span class="hljs-keyword">as</span> needed.
+<span class="hljs-keyword">import</span> matplotlib.image <span class="hljs-keyword">as</span> mpimg
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+def dog_breed_classifier(img_path):
+	image = mpimg.imread(img_path)
+	plt.imshow(image)
+
+	<span class="hljs-keyword">if</span> dog_detector(img_path):
+		plt.title(<span class="hljs-string">"The dog is most likely a %s."</span> % predict_dog_breed(img_path))
+	elif face_detector(img_path):
+		plt.title(<span class="hljs-string">"The human in the image most resembles a %s."</span> % predict_dog_breed(img_path))
+	else:
+		print(<span class="hljs-string">"Can't predict the breed. There is no dog or human in this picture!"</span>)
+
+	plt.show()
+									</code></pre>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step7">Step 7</a>: Test Your Algorithm<ul>
+								<li>METHOD:<ul>
+										<li>Results in the Project Results Section of this README</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+
+					<h1 id="sec5">5. Project Results</h1>
+					<hr>
+					<div><img src="../images/output.jpg" alt="image">
+						<img src="../images/output2.jpg" alt="image">
+					</div>
+					<div style="margin-bottom: 20px;">
+						<img src="../images/output3.jpg" alt="image">
+						<img src="../images/output4.jpg" alt="image">
+					</div>
+
+					<h1 id="sec6">6. Conclusions</h1>
+					<hr>
+					<p>I created about 3 different models, with a Baseline initially reaching 11% accuracy, with a
+						simple deep neural network, and I progressed until creating a convolutional model that uses
+						transfer learning to boost its performance, reaching an accuracy of 86% in my ratings. I was
+						able to successfully create an entire ML pipeline where I started from solution planning, data
+						acquisition, processing, data separation in training, testing and validation sets, performance
+						evaluation of the models, and generating conclusions about them. As a result, the application
+						can classify human faces in a photo, classify dogs in a photo, and tell each of them which breed
+						of dog they most resemble.</p>
+
+					<h1 id="sec7">7. References</h1>
+					<hr>
+						<ul>
+							<li><a href="https://github.com/udacity/deep-learning">Link para o repositório oficial do Deep Learning Nanodegree</a></li>
+						</ul>
+					<h1 id="sec8">8. Next Steps</h1>
+					<hr>
+					<ul>
+						<li>Create an interface for the user upload images</li>
+						<li>Create an APP passing this algorithm as API</li>
+					</ul>
 		</div>
 	</div>
 
