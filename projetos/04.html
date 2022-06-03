@@ -1,0 +1,291 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Gustavo Barros</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<div id="wrapper-project-page">
+		<div class="container">
+			<a href="../index.html" class="button">
+				<<< Back</a>
+					<h1 id="proj-title">Predicting Boston Housing Prices</h1>
+					<figure>
+						<img src="../images/img2.jpg" alt="">
+					</figure>
+					<br>
+					<p>
+						In this project I completed all the pipeline steps of a Machine Learning project. The business
+						problem consisted of assuming the role of a real estate agent who needs to have a good estimate
+						of the price of houses in an area of ​​the city of Boston, for this I created a Neural Networks
+						algorithm that uses the characteristics of each house to make a prediction of its price.
+						Bringing automation into a real-state agent's work step, increasing its efficiency and reducing
+						costs with possible miscalculations or bias.
+					</p>
+					<h1 style="margin-top: 10px;">Table of Contents:</h1>
+					<ol class="table-of-contents">
+						<li><a href="#sec1">Business Problem</a></li>
+						<li><a href="#sec2">Project Assumptions</a></li>
+						<li><a href="#sec3">Data Dictionary</a></li>
+						<li><a href="#sec4">Solution Planning</a></li>
+						<li><a href="#sec5">Business Insights</a></li>
+						<li><a href="#sec6">Conclusion</a></li>
+						<li><a href="#sec7">References</a></li>
+						<li><a href="#sec8">Next Steps</a></li>
+					</ol>
+
+					<h1 id="sec1">1. Business Problem</h1>
+					<hr>
+					<p>
+						The Boston housing market is highly competitive, and you want to be the best real estate agent
+						in the area. To compete with your peers, you decide to leverage a few basic machine learning
+						concepts to assist you and a client with finding the best selling price for their home. Luckily,
+						you’ve come across the Boston Housing dataset which contains aggregated data on various features
+						for houses in Greater Boston communities, including the median value of homes for each of those
+						areas. Your task is to build an optimal model based on a statistical analysis with the tools
+						available. This model will then be used to estimate the best selling price for your clients'
+						homes.
+					</p>
+					<h1 id="sec2">2. Project Assumptions</h1>
+					<hr>
+					<ul>
+						<li>Some template code was provided.</li>
+						<li>The dataset is a little outdated, so it don't represent real-world values for the
+							estimations.</li>
+						<li>Some pre-processing was made to the original dataset before it was made available for the
+							project.</li>
+					</ul>
+					<h1 id="sec3">3. Data Dictionary</h1>
+					<hr>
+					<p>The dataset for this project originates from the UCI Machine Learning Repository. The Boston
+						housing data was collected in 1978 and each of the 506 entries represent aggregated data about
+						14 features for homes from various suburbs in Boston, Massachusetts. For the purposes of this
+						project, the following preprocessing steps have been made to the dataset:</p>
+					<ul>
+						<li>16 data points have an 'MEDV' value of 50.0. These data points likely contain missing or
+							censored values and have been removed.</li>
+						<li>1 data point has an 'RM' value of 8.78. This data point can be considered an outlier and has
+							been removed.</li>
+						<li>The features 'RM', 'LSTAT', 'PTRATIO', and 'MEDV' are essential. The remaining non-relevant
+							features have been excluded.</li>
+						<li>The feature 'MEDV' has been multiplicatively scaled to account for 35 years of market
+							inflation.</li>
+					</ul>
+
+					<h3>BOSTON HOUSES DATASET</h3>
+					<ul>
+						<table>
+							<tr>
+								<th>VARIABLE</th>
+								<th>DESCRIPTION</th>
+							</tr>
+							<tr>
+								<td>RM</td>
+								<td>The average number of rooms among homes in the neighborhood.</td>
+							</tr>
+							<tr>
+								<td>LSTAT</td>
+								<td>The percentage of homeowners in the neighborhood considered "lower class" (working
+									poor).</td>
+							</tr>
+							<tr>
+								<td>PTRATIO</td>
+								<td>The ratio of students to teachers in primary and secondary schools in the
+									neighborhood.</td>
+							</tr>
+							<tr>
+								<td>MEDV</td>
+								<td>Price of the house (target variable)</td>
+							</tr>
+						</table>
+					</ul>
+
+					<h1 id="sec4">4. Solution Planning</h1>
+					<hr>
+					<h2 id="final-product">Final Product</h2>
+					<p>At the end of this project i will have built a notebook with both analysis of the implemented
+						model and predictions about the price of a house, based on its features.</p>
+					<h2 id="tech-stack">Tech Stack</h2>
+					<ul>
+						<li>Python</li>
+						<li>Numpy and Pandas</li>
+						<li>Matplotlib</li>
+						<li>scikit-learn</li>
+					</ul>
+					<h2 id="process-and-methods">Process and Methods</h2>
+					<p>I broke the notebok into separate steps, in order to easily grasp the whole picture of the
+						project and quickly change between tasks.</p>
+					<ul>
+						<li>
+							<a href="#step0">Step 0</a>: Knowing the Data
+							<ul>
+								<li>METHOD: Extract a dataset of dog images with the use of the <code>load_files</code>
+									function from the scikit-learn library.<ul>
+										<li>Read the dataset documentation.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step1">Step 1</a>: Import Dataset<ul>
+								<li>METHOD: <ul>
+										<li>Import relevant libraries into the notebook</li>
+										<li>Read the dataset file 'housing.csv' into a pandas DataFrame</li>
+										<li>Print the size of the dataset</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step2">Step 2</a>: Data Exploration<ul>
+								<li>METHOD:<ul>
+										<li>Create dataset dictionary</li>
+										<li>Separate the dataset into features and the target variable</li>
+										<li>Calculate and display some summary statistics</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step3">Step 3</a>: Feature Observation<ul>
+								<li>METHOD:<ul>
+										<li>Investigate the correlations between each variable with each other</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step4">Step 4</a>: Developint a Model<ul>
+								<li>METHOD:<ul>
+										<li>Define a Performance Metric</li>
+										<li>Shuffle and Split Data</li>
+										<li>Training and Testing</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step5">Step 5</a>: Analyzing Model Performance
+							<ul>
+								<li>METHOD:<ul>
+										<li>Plot the Learning Curves of the model with different values for the
+											hypeparameters</li>
+										<li>Investigate the Bias-Variance Tradeoff</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step5">Step 6</a>: Evaluating Model Performance
+							<ul>
+								<li>METHOD:<ul>
+										<li>Execute Grid Search</li>
+										<li>Cross-Validation Step</li>
+										<li>Making Predictions</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step5">Step 5</a>: Conclusion
+							<ul>
+								<li>METHOD:<ul>
+										<li>Test the resulting model with real-world data, comparing its predicted price
+											with its real value.</li>
+										<li>Calculate its R2 Score and other metrics</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+
+					<h1 id="sec5">5. Business Insights</h1>
+					<hr>
+					<ul>
+						<li>How relevant today is data that was collected from 1978? How important is inflation?:
+							<ul>
+								<li>
+									Slightly relevant, because the infrastructure of the neighborhoods changed, the
+									inflation has changed too, other features that influenciates the final value of the
+									property arose etc. Very important, because it changes the real value of goods and
+									services over a period.
+								</li>
+							</ul>
+						</li>
+						<li>Is it fair to judge the price of an individual home based on the characteristics of the
+							entire neighborhood?:
+							<ul>
+								<li>
+									Yes. It is one of the most important factors because it directly influences the
+									quality of life of home owners.
+								</li>
+							</ul>
+						</li>
+						<li>Are the features present in the data sufficient to describe a home? Do you think factors
+							like quality of apppliances in the home, square feet of the plot area, presence of pool or
+							not etc should factor in?
+							<ul>
+								<li>
+									No, because it is missing features that could affect the selling price in today's
+									housing market such as size of a backyard or if there is a garage, number of
+									bathrooms, etc. Totally, yes.
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+					<h1 id="sec6">6. Conclusion</h1>
+					<hr>
+					<ul>
+						<li>
+							<b>Regarding the model:</b>
+							<ul>
+								<li>An optimal model is not necessarily a robust model. Sometimes, a model is either too
+									complex or too simple to sufficiently generalize to new data. Sometimes, a model
+									could use a learning algorithm that is not appropriate for the structure of the data
+									given. Other times, the data itself could be too noisy or contain too few samples to
+									allow a model to adequately capture the target variable — i.e., the model is
+									underfitted.</li>
+							</ul>
+						</li>
+						<li>
+							<b>Regarding the Business Insights:</b>
+							<ul>
+								<li>This type of project is key to companies like a real-state agency, finding a way to
+									predict the values of the homes based on their features increases speed, automate
+									tasks, reduce costs with audit, etc. Such a solution, using ML and Data Science can
+									bring a lot of value to those companies.</li>
+							</ul>
+						</li>
+					</ul>
+
+					<h1 id="sec7">7. References</h1>
+					<hr>
+					<ul>
+						<li>Dataset: Located in the repo as 'housing.csv'</li>
+					</ul>
+					<h1 id="sec8">8. Next Steps</h1>
+					<hr>
+					<ul>
+						<li>Create a more robust network using popular ML frameworks</li>
+						<li>Try to generate more insights about this business problems (make more analysis)</li>
+						<li>Plot some graphs</li>
+					</ul>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<p class="copyright">&copy; Gustavo Barros, 2022</p>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>

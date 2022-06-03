@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Gustavo Barros</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<div id="wrapper-project-page">
+		<div class="container">
+			<a href="../index.html" class="button">
+				<<< Back</a>
+					<h1 id="proj-title">Predicting Bike Sharing Data</h1>
+					<figure>
+						<img src="../images/img3.jpg" alt="">
+					</figure>
+					<br>
+					<p>
+						This is a forecast type project, where I dealt with historical data from a real-world company
+						called Cyclo Hop, whose business model consists of renting bicycles scattered around the city,
+						and who had the business problem of not finding the best total number of bikes to keep in your
+						inventory throughout the year. For this project I created a neural network trained on historical
+						data to make predictions about the total number of bikes to have over time.
+					</p>
+					<h1 style="margin-top: 10px;">Table of Contents:</h1>
+					<ol class="table-of-contents">
+						<li><a href="#sec1">Business Problem</a></li>
+						<li><a href="#sec2">Project Assumptions</a></li>
+						<li><a href="#sec3">Data Dictionary</a></li>
+						<li><a href="#sec4">Solution Planning</a></li>
+						<li><a href="#sec5">Business Insights</a></li>
+						<li><a href="#sec6">Conclusion</a></li>
+						<li><a href="#sec7">References</a></li>
+						<li><a href="#sec8">Next Steps</a></li>
+					</ol>
+
+					<h1 id="sec1">1. Business Problem</h1>
+					<hr>
+					<p>
+						In this project, i built my first neural network utilizing concepts of Object-Oriented
+						Programming (OOP), and used it to predict daily bike rental ridership. I have been provided with
+						some template code, but they left the implementation of the neural network up to me. This
+						project corresponded to the first project of the Udacity Deep Learning Nanodegree program, a
+						compound of 5 total projects that a finished successfully.
+					</p>
+					<p>
+						For this project you'll build a neural network to predict bike-sharing rides. Imagine yourself
+						owning a bike sharing company like Cycle Hop. You want to predict how many bikes you need
+						because if you have too few you're losing money from potential riders. If you have too many
+						you're wasting money on bikes that are just sitting around. So you need to predict from
+						historical data how many bikes you'll need in the near future. A good way to do this is with a
+						neural network which is exactly what you'll do. In this notebook, you'll implement a neural
+						network and train it on historical data to make predictions. The main goal is to successfully
+						build an algorithm that can bring real-world value to this company, by improving one key
+						features on its business model, utterly bringing more value to the company.
+					</p>
+					<h1 id="sec2">2. Project Assumptions</h1>
+					<hr>
+					<ul>
+						<li>The dataset records daily historical data from January 1 2011 to December 31 2012.</li>
+						<li>The number of riders is split between casual and registered.</li>
+						<li>Some days don't have exactly 24 entries in the data set</li>
+					</ul>
+					<h1 id="sec3">3. Data Dictionary</h1>
+					<hr>
+					<p>The dataset consists of hourly ridership data from days ranging from January 1 2011 to December
+						31 2012, this dataset has 17 columns and 17379 entries (rows).</p>
+
+					<h3>BIKES RIDERSHIP DATASET</h3>
+					<ul>
+						<table>
+							<tr>
+								<th>Variable</th>
+								<th>Description</th>
+							</tr>
+							<tr>
+								<td>instant</td>
+								<td>record index</td>
+							</tr>
+							<tr>
+								<td>dteday</td>
+								<td>date</td>
+							</tr>
+							<tr>
+								<td>season</td>
+								<td>season (1:winter, 2:spring, 3:summer, 4:fall)</td>
+							</tr>
+							<tr>
+								<td>yr</td>
+								<td>year (0: 2011, 1:2012)</td>
+							</tr>
+							<tr>
+								<td>month</td>
+								<td>month (1 to 12)</td>
+							</tr>
+							<tr>
+								<td>hr</td>
+								<td>hour (0 to 23)</td>
+							</tr>
+							<tr>
+								<td>holiday</td>
+								<td>weather day is holiday or not (extracted from [Web Link])</td>
+							</tr>
+							<tr>
+								<td>weekday</td>
+								<td>day of the week</td>
+							</tr>
+							<tr>
+								<td>workingday</td>
+								<td>if day is neither weekend nor holiday is 1, otherwise is 0</td>
+							</tr>
+							<tr>
+								<td>weathersit</td>
+								<td>1: Clear, Few clouds, Partly cloudy, Partly cloudy</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>2: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>3: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered
+									clouds</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>4: Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog</td>
+							</tr>
+							<tr>
+								<td>temp</td>
+								<td>Normalized temperature in Celsius. The values are derived via
+									(t-t_min)/(t_max-t_min), t_min=-8, t_max=+39 (only in hourly scale)</td>
+							</tr>
+							<tr>
+								<td>atemp</td>
+								<td>Normalized feeling temperature in Celsius. The values are derived via
+									(t-t_min)/(t_max-t_min), t_min=-16, t_max=+50 (only in hourly scale)</td>
+							</tr>
+							<tr>
+								<td>hum</td>
+								<td>Normalized humidity. The values are divided to 100 (max)</td>
+							</tr>
+							<tr>
+								<td>windspeed</td>
+								<td>Normalized wind speed. The values are divided to 67 (max)</td>
+							</tr>
+							<tr>
+								<td>casual</td>
+								<td>count of casual users</td>
+							</tr>
+							<tr>
+								<td>registered</td>
+								<td>count of registered users</td>
+							</tr>
+							<tr>
+								<td>cnt</td>
+								<td>count of total rental bikes including both casual and registered</td>
+							</tr>
+						</table>
+					</ul>
+
+					<h1 id="sec4">4. Solution Planning</h1>
+					<hr>
+					<h2 id="final-product">Final Product</h2>
+					<p>At the end of this project i will have built a notebook with both analysis and predictions about
+						the next month number of riderships and a python script with a neural network created based on
+						the principles of OOP.</p>
+					<h2 id="tech-stack">Tech Stack</h2>
+					<ul>
+						<li>Python</li>
+						<li>Numpy and Pandas</li>
+						<li>Matplotlib</li>
+					</ul>
+					<h2 id="process-and-methods">Process and Methods</h2>
+					<p>I broke the notebok into separate steps, in order to easily grasp the whole picture of the
+						project and quickly change between tasks.</p>
+					<ul>
+						<li>
+							<a href="#step0">Step 0</a>: Knowing the Data
+							<ul>
+								<li>METHOD: Extract a dataset of dog images with the use of the <code>load_files</code>
+									function from the scikit-learn library.<ul>
+										<li><code>train_files</code>, <code>valid_files</code>, <code>test_files</code>
+											- numpy arrays containing file paths to images</li>
+										<li><code>train_targets</code>, <code>valid_targets</code>,
+											<code>test_targets</code> - numpy arrays containing onehot-encoded
+											classification labels
+										</li>
+										<li><code>dog_names</code> - list of string-valued dog breed names for
+											translating labels</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step1">Step 1</a>: Import Dataset<ul>
+								<li>METHOD: <ul>
+									<li>Import relevant libraries into the notebook</li>
+									<li>Download and import dataset from <a href="https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset">https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset</a></li>
+									<li>Display summary Info and Metrics</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step2">Step 2</a>: Clean and Pre-process Data<ul>
+								<li>METHOD:<ul>
+									<li>Check for null and duplicated values</li>
+									<li>Create some dummy_variables</li>
+									<li>Scale target variables</li>
+									<li>Split data into training, testing and validation sets</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step3">Step 3</a>: Build the Model<ul>
+								<li>METHOD:<ul>
+										<img src="../images/neural_network.png" alt="">
+										<li>Implement the sigmoid function to use as the activation function. Set self.activation_function in __init__ to your sigmoid function.</li>
+										<li>Implement the forward pass in the train method.</li>
+										<li>Implement the backpropagation algorithm in the train method, including calculating the output error.</li>
+										<li>Implement the forward pass in the run method.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step4">Step 4</a>: Train, Test and Validate<ul>
+								<li>METHOD:<ul>
+									<li>Trainig: Here i'll set the hyperparameters for the network and be using a method know as Stochastic Gradient Descent (SGD) to train the network, among other things.</li>
+									<li>Testing: Here, i'll use the test data to view how well my network is modeling the data.</li>
+									<li>Validating: Here, i'll further check if my model has low bias and variance, and most important, it's not overfitting.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#step5">Step 5</a>: Conclusion
+							<ul>
+								<li>METHOD:<ul>
+										<li>Make assessments of the whole process, double check key steps, and try to
+											think in numerical terms how much this model may impact positively the
+											finances of the company.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+
+					<h1 id="sec5">5. Business Insights</h1>
+					<hr>
+					<p>
+						I found that Bike-sharing rental process is highly correlated to the environmental and seasonal
+						settings, such as holidays, climate, special events and Meteorological Seasons. Beyond the
+						actual daily number of rides that can be used to efficiently manage the number of bikes
+						available on the streets in a particular day, we can use the insights mentioned aboove to create
+						special marketing strateies among with discounts, to increase the number of users in those
+						particular days. All of this added can for shure increase the efficiency of the company's
+						business model and retain more active daily users.
+					</p>
+
+					<h1 id="sec6">6. Conclusion</h1>
+					<hr>
+					<ul>
+						<li>
+							<b>Regarding the model:</b>
+							<ul>
+								<li>The model predict the data pretty well. It fails in some periods of time when the
+									data shows some unsual pattern, such as long holidays and so on. Because they are
+									isolated cases, it means that these patterns are only present in tiny pieces of the
+									data, becoming harder to the model learn them.</li>
+							</ul>
+						</li>
+						<li>
+							<b>Regarding the Business Insights:</b>
+							<ul>
+								<li>This type of project is key to the company business model, finding a way to not
+									waste money with lack of demand and idle products is a huge problem that many
+									companies face. Such a solution, using ML and Data Science can bring a lot of value
+									to those companies.</li>
+							</ul>
+						</li>
+					</ul>
+
+					<h1 id="sec7">7. References</h1>
+					<hr>
+					<ul>
+						<li>Dataset: <a
+								href="https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset">https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset</a>
+						</li>
+						<li>Project's oficial repo: <a
+								href="https://github.com/udacity/deep-learning/tree/master/first-neural-network">https://github.com/udacity/deep-learning/tree/master/first-neural-network</a>
+						</li>
+					</ul>
+					<h1 id="sec8">8. Next Steps</h1>
+					<hr>
+					<ul>
+						<li>Create a more robust network using popular ML frameworks</li>
+						<li>Try to generate more insights about this business problems (make more analysis)</li>
+						<li>Plot some graphs</li>
+						<li>Make a Dashboard of this project on Streamlit</li>
+						<li>Provide an actual estimate, in dollar, of how much money the implementation of this project
+							can save for Cycle Hop.</li>
+					</ul>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<p class="copyright">&copy; Gustavo Barros, 2022</p>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>

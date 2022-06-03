@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Gustavo Barros</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<div id="wrapper-project-page">
+		<div class="container">
+			<a href="../index.html" class="button">
+				<<< Back</a>
+					<h1 id="proj-title">Exploring Chicago Bike Share Data</h1>
+					<figure>
+						<img src="../images/img1.jpg" alt="">
+					</figure>
+					<br>
+					<p>
+						In this project, you will make use of Python to explore data related to bike share systems for
+						Chicago. You will write code to import the data and answer interesting questions about it by
+						computing descriptive statistics. You will also create some important functions and plot charts.
+					</p>
+					<h1 style="margin-top: 10px;">Table of Contents:</h1>
+					<ol class="table-of-contents">
+						<li><a href="#sec1">Business Problem</a></li>
+						<li><a href="#sec2">Business Questions</a></li>
+						<li><a href="#sec3">Project Assumptions</a></li>
+						<li><a href="#sec4">Data Dictionary</a></li>
+						<li><a href="#sec5">Solution Planning</a></li>
+						<li><a href="#sec6">Conclusion</a></li>
+						<li><a href="#sec7">References</a></li>
+						<li><a href="#sec8">Next Steps</a></li>
+					</ol>
+
+					<h1 id="sec1">1. Business Problem</h1>
+					<hr>
+					<p>
+						Over the past decade, bicycle-sharing systems have been growing in number and popularity in
+						cities across the world. Bicycle-sharing systems allow users to rent bicycles on a very
+						short-term basis for a price. This allows people to borrow a bike from point A and return it at
+						point B, though they can also return it to the same location if they'd like to just go for a
+						ride. Regardless, each bike can serve several users per day.
+					</p>
+					<p>
+						Thanks to the rise in information technologies, it is easy for a user of the system to access a
+						dock within the system to unlock or return bicycles. These technologies also provide a wealth of
+						data that can be used to explore how these bike-sharing systems are used.
+					</p>
+					<p>
+						In this project, you will use data provided by <a
+							href="https://www.motivateco.com/">Motivate</a>, a bike share system provider for many
+						major cities in the United States, to uncover bike share usage patterns. You will use the data
+						from one of the largest cities of United States: Chicago.
+					</p>
+					<h1 id="sec2">2. Business Questions</h1>
+					<hr>
+					<ul>
+						<li>Task 1: Print the first 20 samples(rows) from the database</li>
+						<li>Task 2: Print the gender(column) of the first 20 samples</li>
+						<li>Task 3: Create a function to get the columns as a list</li>
+						<li>Task 4: Count how many of each gender do we have</li>
+						<li>Task 5: Create a function to count the genders</li>
+						<li>Task 6: Show the most popular gender</li>
+						<li>Task 7: Plot a a chart using the previous data</li>
+						<li>Task 8: Answer why summing the number of Males and Females doesn't match the number of
+							samples</li>
+						<li>Task 9: Find the minimum, maximum, mean and median duration of the trips</li>
+						<li>Task 10: Get all the start stations of the dataset</li>
+						<li>Task 11: Create a function count the occurrence of any given column (optional)</li>
+					</ul>
+					<h1 id="sec3">3. Project Assumption</h1>
+					<hr>
+					<ul>
+						<li>Some template code was provided.</li>
+					</ul>
+					<h1 id="sec4">3. Data Dictionary</h1>
+					<hr>
+					<p>Data for the first six months of 2017 are provided. The data file contain six (6) columns.</p>
+
+					<h3>CHICAGO BIKES RIDERSHIP DATASET</h3>
+					<ul>
+						<table>
+							<tr>
+								<th>VARIABLE</th>
+								<th>DESCRIPTION</th>
+							</tr>
+							<tr>
+								<td>Start Time</td>
+								<td>(e.g. 2017-01-01 00:07:57)</td>
+							</tr>
+							<tr>
+								<td>End Time</td>
+								<td>(e.g. 2017-01-01 00:20:53)</td>
+							</tr>
+							<tr>
+								<td>Trip Duration</td>
+								<td>(in seconds, e.g., 776)</td>
+							</tr>
+							<tr>
+								<td>Start Station</td>
+								<td>(e.g. Broadway & Barry Ave)</td>
+							</tr>
+							<tr>
+								<td>End Station</td>
+								<td>(e.g. Sedgwick St & North Ave)</td>
+							</tr>
+							<tr>
+								<td>User Type</td>
+								<td>(Subscriber or Customer)</td>
+							</tr>
+							<tr>
+								<td>Gender</td>
+								<td>(Male or Female)</td>
+							</tr>
+							<tr>
+								<td>Birth Year</td>
+								<td>(e.g., 1980)</td>
+							</tr>
+						</table>
+					</ul>
+
+					<h1 id="sec5">4. Solution Planning</h1>
+					<hr>
+					<h2 id="final-product">Final Product</h2>
+					<p>Deliver a python script with the all TASKS completed passing all <code>assert</code> statements.
+					</p>
+					<h2 id="tech-stack">Tech Stack</h2>
+					<ul>
+						<li>Python</li>
+						<li>Matplotlib</li>
+					</ul>
+					<h2 id="process-and-methods">Process and Methods</h2>
+					<p>I was given 11 business questions to answer:</p>
+					<ul>
+						<li>Task 1: Print the first 20 samples(rows) from the database<ul>
+								<li>Method: <ul>
+										<li><code>for i in range(20): print(&quot;{}. {}&quot;.format(i, data_list[i]))</code>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 2: Print the gender(column) of the first 20 samples<ul>
+								<li>Method: <ul>
+										<li><code>for i in range(20): print(&quot;{}. {}&quot;.format(i, data_list[i][-2]))</code>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 3: Create a function to get the columns as a list<ul>
+								<li>Method: <ul>
+										<li>Create function function that gets a multidimensional list and returns a
+											particular column(list) specified by the index.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 4: Count how many of each gender do we have<ul>
+								<li>Method: <ul>
+										<li>Iterate over the list with a for loop and create a conditional clause to
+											select each case and add 1 value to a counter of the respective value</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 5: Create a function to count the genders<ul>
+								<li>Method: <ul>
+										<li>Put the above logic into a function</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 6: Show the most popular gender<ul>
+								<li>Method: <ul>
+										<li>Print the largest value for the previou counters in respect to the genders
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 7: Plot a a chart using the previous data<ul>
+								<li>Method: <ul>
+										<li>Use matplotlib to plot a bar chart of the frequency of each gender</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 8: Answer why summing the number of Males and Females doesn&#39;t match <ul>
+								<li>Method: the number of samples<ul>
+										<li>Because there are missing values</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 9: Find the minimum, maximum, mean and median duration of the trips<ul>
+								<li>Method: <ul>
+										<li>Use a for loop to iterate over and make the calculations</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 10: Get all the start stations of the dataset<ul>
+								<li>Method: <ul>
+										<li>Implement: <code>user_types = set(column_to_list(data_list, 3))</code></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>Task 11: Create a function count the occurrence of any given column <ul>
+								<li>Method: (optional)<ul>
+										<li>DOCSTRING: Function that counts the occurrence of any given column and
+											returns the types and their quantities on the column.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+
+
+					<h1 id="sec6">6. Conclusion</h1>
+					<hr>
+					<p>This was my first project in the data science world, it was a good start because it didn't
+						involve leaving the ordinary python stack, but still introduced the usage of python for data
+						science. It helped grasp how it is to import a dataset, explore and draw some conclusions about
+						it.</p>
+
+					<h1 id="sec7">7. References</h1>
+					<hr>
+					<ul>
+						<li><a href="https://www.udacity.com">Udacity</a></li>
+					</ul>
+					<h1 id="sec8">8. Next Steps</h1>
+					<hr>
+					<ul>
+						<li>Create a notebook to make understanding this project easier</li>
+						<li>Create some neat visualizations to gain more insight about the dataset</li>
+					</ul>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<p class="copyright">&copy; Gustavo Barros, 2022</p>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/main.js"></script>
+</body>
+
+</html>
