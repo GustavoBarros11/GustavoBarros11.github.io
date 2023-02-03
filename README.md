@@ -1,6 +1,6 @@
 <h2> Bem-vindo ao meu Portfólio de Projetos de Data Science and Analytics. </h2>
 
-[Aperte aqui](https://gustavobarros11.github.io/) para acessar a página onde apresento projetos desenvolvidos a partir de dados públicos, com resoluções de problemas de negócios utilizando conceitos e ferramentas de Data Science e Analytics.
+[Aperte aqui](https://gustavobarros11.github.io/pt) para acessar a página onde apresento projetos desenvolvidos a partir de dados públicos, com resoluções de problemas de negócios utilizando conceitos e ferramentas de Data Science e Analytics.
 
 Você também encontrará minhas experiências, habilidades e contatos.
 
